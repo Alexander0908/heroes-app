@@ -26,10 +26,10 @@ const HeroesList = () => {
     const onDelete = useCallback((id) => {
         request(`http://localhost:3001/heroes/${id}`, "DELETE")
             .then(data => console.log(data, 'Deleted'))
-            .then(() => dispatch(heroDeleted(id))) // Изменено на функцию для правильной работы
+            .then(dispatch(heroDeleted(id))) // Изменено на функцию для правильной работы
             .catch(err => console.log(err));
         // eslint-disable-next-line  
-    }, [request, dispatch]);
+    }, [request]);
 
     if (heroesLoadingStatus === "loading") {
         return <Spinner />;
@@ -40,7 +40,9 @@ const HeroesList = () => {
     const renderHeroesList = (arr) => {
         if (!Array.isArray(arr) || arr.length === 0) {
             return (
-                <CSSTransition timeout={0} classNames="hero">
+                <CSSTransition 
+                    timeout={0} 
+                    classNames="hero">
                     <h5 className="text-center mt-5">No heroes yet</h5>
                 </CSSTransition>
             );
@@ -48,7 +50,10 @@ const HeroesList = () => {
 
         return arr.map(({ id, ...props }) => {
             return (
-                <CSSTransition key={id} timeout={500} classNames="hero">
+                <CSSTransition 
+                    key={id} 
+                    timeout={500} 
+                    classNames="hero">
                     <HeroesListItem {...props} onDelete={() => onDelete(id)} />
                 </CSSTransition>
             );

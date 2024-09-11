@@ -14,3 +14,22 @@
         padding-left: 40px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .content {
+        display: block;
+
+        ul {
+            margin: 0 20px;
+        }
+    }
+
+    .content__interactive {
+        display: contents;
+    }
+
+    .card-body {
+        align-self: center;
+        text-align: center;
+    }
+}

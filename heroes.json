@@ -17,12 +17,6 @@
       "name": "Sea hero",
       "description": "Like Aquaman, but not from DC",
       "element": "water"
-    },
-    {
-      "id": "054bcdb3-c886-4f15-91a3-7566ace1759b",
-      "name": "Ironman",
-      "description": "Fly and fight",
-      "element": "fire"
     }
   ],
   "filters": [
